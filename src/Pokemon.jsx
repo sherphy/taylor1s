@@ -1,4 +1,4 @@
-import songs from "./assets/TaylorSongs.json";
+import songs from "./assets/PokemonSongs.json";
 import Song from "./Song";
 import { useState, useRef } from "react";
 
@@ -10,7 +10,7 @@ function shuffleArray(array) {
   return array;
 }
 
-const Home = () => {
+const Pokemon = () => {
   const shuffledSongsRef = useRef(shuffleArray([...songs]));
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
 
@@ -27,4 +27,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Pokemon;
