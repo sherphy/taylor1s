@@ -14,7 +14,7 @@ const Home = () => {
   const shuffledSongs = shuffleArray([...songs]);
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
 
-  const nextSong = () => {
+  const nextSongIndexHandler = () => {
     if (currentSongIndex < shuffledSongs.length - 1) {
       setCurrentSongIndex(currentSongIndex+1);
     }
@@ -22,8 +22,7 @@ const Home = () => {
 
   return (
     <div className="home">
-        <Song song={shuffledSongs[currentSongIndex]}/>
-        <button onClick={() => nextSong()}>Next</button>
+        <Song song={shuffledSongs[currentSongIndex]} nextSongIndexHandler={nextSongIndexHandler}/>
     </div>
   );
 };
